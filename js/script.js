@@ -1,11 +1,13 @@
 var map = mapbox.map('map');
-  var layers = document.getElementById('map-ui');
+var layers = document.getElementById('map-ui');
 
-  // Layer loading from an ID is asynchronous so we provide map.interaction.auto
-  // as the callback for once loading is complete to enabled interaction.
-  map.addLayer(mapbox.layer().composite(false).id('moasth.map-6zbgfb0l', map.interaction.auto));
-  map.addLayer(mapbox.layer().composite(false).id('moasth.chateaux4', map.interaction.auto));
-  map.centerzoom({ lat: 38.9, lon: -77.03 }, 5);
+// Layer loading from an ID is asynchronous so we provide map.interaction.auto
+// as the callback for once loading is complete to enabled interaction.
+map.addLayer(mapbox.layer().composite(false).id('moasth.map-6zbgfb0l', map.interaction.auto));
+map.addLayer(mapbox.layer().composite(false).id('moasth.chateaux4', map.interaction.auto));
+// map.centerzoom(center, zoom [, animate])
+map.centerzoom({lat: 48.583, lon: 7.750, }, 8);
+map.setZoomRange(8, 16);
 
   // Create a layer switcher that toggles layers exclusively.
   for (var i = 0; i < map.getLayers().length; i++) {
